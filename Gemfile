@@ -9,6 +9,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails" # Uncomment this line
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem "dotenv-rails", groups: [:development, :test]
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"

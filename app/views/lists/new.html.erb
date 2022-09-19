@@ -1,7 +1,9 @@
 <h1>Lists#new</h1>
 <p>Find me in app/views/lists/new.html.erb</p>
-
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+<div class="col-6 mx-auto my-5">
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    
+    <%= f.submit %>
+  <% end %>
+</div>
