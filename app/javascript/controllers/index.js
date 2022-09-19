@@ -6,3 +6,12 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+console.log("event");
+
+  const romain = document.getElementById("results");
+  element.addEventListener('submit', (event) => {
+    // Do something (callback)
+    console.log(event);
+  });
+  
