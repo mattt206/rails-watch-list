@@ -1,15 +1,16 @@
-
-
-<% @lists.each do |list| %>
-  <%= link_to "#{list.name}", list_path(list) %>
-<% end %>
-
-<br>
-
-<%= link_to "create_list", new_list_path %>
-
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  <% @lists.each do |list| %>
-    <%= link_to "#{list.name}", list_path(list) %>
-  <% end %>
+<%= render 'shared/banner' %>
+<div class="m-5"></div>
+<div class="container">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)" >
+        <%= link_to list.name.upcase, list_path(list),  class: "link", class: "text_link" %>
+      </div>
+    <% end %>
+  </div>
 </div>
+<div class="m-4"></div>
+
+
+
+<%#= f.input :photo, as: :file %>
