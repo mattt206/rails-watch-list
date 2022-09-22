@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.gannett-cdn.com/-mm-/83e081eae80cd2848af52df6da1060d621468f19/c=0-111-2120-1303/local/-/media/2021/02/04/USATODAY/usatsports/red-movie-theater-seats.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key, crop: :scale %>); background-size: fill; background-repeat: no-repeat; background-position: center; background color">
   <div class="container">
     <h1 class="text-center"><%= @list.name.upcase %></h1>
     <div class="d-flex justify-content-start">
@@ -13,14 +13,15 @@
   <div class="row ">
 
         <% @list.bookmarks.each do |bookmark| %>
-          <div class="col-sm">
-            <div class="card bg-new" style="width: 25rem;">
-              <%#=   <img class="card-img-top" src=   <%= bookmark.movie.poster_url  width="100"  > %>
-              <img class="card-img-top" src=   <%= cl_image_path bookmark.photo.key, crop: :thumb, gravity: :face %>  width="100"  >
+          <div class="col-6 d-flex justify-content-around">
+            <div class="card bg-new"  style="height: 50rem;">
+              <img class="card-img-top" width="250" height="350" src="<%= bookmark.movie.poster_url %>" />
                 <div class="card-body">
                   <h5 class="card-title"> <strong>  <%= bookmark.movie.title %></strong></h5>
                   <p><% bookmark.movie.rating.to_i.times do%><i class="fa-regular fa-star star-color"></i><% end %></p>
-                  <p class="card-text"><%= bookmark.comment %></p>
+                  <p class="card-text"><%= bookmark.movie.overview %></p>
+                </div>
+                <div class="d-flex align-items-end flex-column">
                   <%= link_to "Delete bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'button-6' %>
                 </div>
             </div>
