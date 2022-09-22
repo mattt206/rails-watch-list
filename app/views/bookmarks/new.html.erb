@@ -10,7 +10,8 @@
     <div class="mx-auto my-5">
       <%= simple_form_for [@list, @bookmark]  do |f| %>
         <%= f.input :comment %>
-        <%= f.input :poster, as: :file %>
+        <%#= f.input :poster, as: :file %>
+        <%= f.input :photo, as: :file %>
         <%= f.association :movie, prompt: "Choose a movie" %>
         <%= f.submit id="Save", class: "button-6 my-3" %>
       <% end %>
