@@ -16,7 +16,7 @@
           <div class="col-sm">
             <div class="card bg-new" style="width: 25rem;">
               <%#=   <img class="card-img-top" src=   <%= bookmark.movie.poster_url  width="100"  > %>
-              <img class="card-img-top" src=   <%= cl_image_path bookmark.photo.key %>  width="100"  >
+              <img class="card-img-top" src=   <%= cl_image_path bookmark.photo.key, crop: :thumb, gravity: :face %>  width="100"  >
                 <div class="card-body">
                   <h5 class="card-title"> <strong>  <%= bookmark.movie.title %></strong></h5>
                   <p><% bookmark.movie.rating.to_i.times do%><i class="fa-regular fa-star star-color"></i><% end %></p>
