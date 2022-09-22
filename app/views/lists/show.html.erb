@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.gannett-cdn.com/-mm-/83e081eae80cd2848af52df6da1060d621468f19/c=0-111-2120-1303/local/-/media/2021/02/04/USATODAY/usatsports/red-movie-theater-seats.jpg);">
   <div class="container">
-    <h1 class="text-center">Your Bookmarks</h1>
+    <h1 class="text-center"><%= @list.name.upcase %></h1>
     <div class="d-flex justify-content-start">
       <%= link_to "Add new bookmark", new_list_bookmark_path(@list), class: "button-6 text-right m-2"  %>
       <%= link_to "Delete List", list_path(@list), class: "button-6 text-right m-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
